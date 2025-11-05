@@ -1,4 +1,5 @@
-const express = require("express");
+import express from "express";
+
 const router = express.Router();
 
 // middleware that is specific to this router
@@ -12,4 +13,4 @@ router.get("/", (request, response) => {
     response.send("Birds home page");
 });
 
-module.exports = router;
+export default router;

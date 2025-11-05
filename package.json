@@ -1,6 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
+  "type": "module",
   "sourceType": "module",
   "description": "The API for my personal website and other random stuff I might do.",
   "main": "src/index.js",
@@ -9,12 +10,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "deploy": "echo hey"
   },
   "dependencies": {
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "spotify-web-api-node": "^5.0.2",
     "wakatime-client": "^2.7.0"
   },
   "devDependencies": {

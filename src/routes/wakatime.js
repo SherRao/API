@@ -1,13 +1,10 @@
-const WakaTimeClientPackage = require("wakatime-client");
-const { WakaTimeClient } = WakaTimeClientPackage;
-const { RANGE } = WakaTimeClientPackage;
+import express from "express";
+import process from "node:process";
+import WakaTimeClientPackage, { WakaTimeClient, RANGE } from "wakatime-client";
 
-const process = require("node:process");
-const express = require("express");
-const router = express.Router();
 
 const client = new WakaTimeClient(process.env.WAKATIME_API_KEY);
-
+const router = express.Router();
 router.use((request, response, next) => {
     console.log("Time: ", Date.now());
     next();
@@ -43,4 +40,4 @@ router.get("/history", async (request, response) => {
     response.send(userDetails);
 });
 
-module.exports = router;
+export default router;

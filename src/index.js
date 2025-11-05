@@ -1,12 +1,12 @@
-require("dotenv").config();
+import "dotenv/config";
+import express from "express";
 
-const express = require("express");
+import root from "./routes/root.js";
+import spotify from "./routes/spotify.js";
+import wakatime from "./routes/wakatime.js";
+
 const app = express();
 const port = 3000;
-
-const root = require("./routes/root");
-const spotify = require("./routes/spotify");
-const wakatime = require("./routes/wakatime");
 
 app.use("/", root);
 app.use("/spotify", spotify);
